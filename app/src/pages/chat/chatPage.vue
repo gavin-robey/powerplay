@@ -16,7 +16,7 @@
     import { onMounted } from 'vue';
     import { defineComponent } from 'vue';
     import { QPage } from 'quasar';
-    import CardComponent from '../chat/CardComponent.vue';
+    import CardComponent from 'app/src/components/CardComponent.vue';
 
     const channelStore = useChannelStore();
     const { channels } = channelStore;

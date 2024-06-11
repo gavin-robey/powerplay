@@ -58,9 +58,13 @@ interface Message {
 
 const messages = ref<Message[]>([]);
 const newMessage = ref('');
-const chatName = ref('');
+const chatName = ref<string | string[]>('');
 
-chatName.value = 'Chat Name';
+const props = defineProps<{ chatNameProp: string | string[] }>();
+
+onMounted(() => {
+  chatName.value = props.chatNameProp;
+});
 
 function sendMessage() {
   if (newMessage.value.trim() !== '') {

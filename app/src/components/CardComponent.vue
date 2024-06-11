@@ -28,8 +28,10 @@
   
   const router = useRouter();
   
+  // TODO: change this to an id so that the chat page has access to the database
+  // using the name for now for style purposes
   const handleClick = () => {
-    router.push({ path: props.link, query: { chatName: props.name } });
+    router.push({ path: `chat/${props.name}` });
   };
   
   const color = () => {
