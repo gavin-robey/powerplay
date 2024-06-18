@@ -7,7 +7,7 @@ describe('Verify chat routing', () => {
 
     it('should navigate to the correct route when clicked', () => {
         // Select all card components
-        cy.get('.q-card').then((cards) => {
+        cy.get('#chat-card').then((cards) => {
             if (cards.length > 0) {
                 cy.wrap(cards).first().click();
 

@@ -1,12 +1,12 @@
 <template>
-    <q-card @click="handleClick" class="q-mb-sm q-pa-md q-mr-sm q-ml-sm">
-      <q-card-section class="row no-wrap items-center">
+    <q-card id="chat-card" @click="handleClick" class="q-mb-sm q-pa-md q-mr-sm q-ml-sm">
+      <q-card-section id='card-section' class="row no-wrap items-center">
         <div v-if="image" class="styled-image-container">
           <q-img :src="image" class="styled-image" />
         </div>
         <div v-else-if="type !== 'channel'" :style="{ backgroundColor: color() }" class="box">{{ name.charAt(0).toUpperCase() }}</div>
         <div v-else class="channel">#</div>
-        <div class="title q-ml-md">{{ name }}</div>
+        <div id='title' class="title q-ml-md">{{ name }}</div>
       </q-card-section>
       <q-card-section class="right-section">
         <q-badge v-if="unread >= 1" color="negative" class="unread">{{ unread }}</q-badge>

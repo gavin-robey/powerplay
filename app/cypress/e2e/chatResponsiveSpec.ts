@@ -37,11 +37,11 @@ describe('Verify component rendering for all screen sizes', () => {
             }
 
             // Check if the card is rendered
-            cy.get('.q-card').should('be.visible');
+            cy.get('#chat-card').should('be.visible');
 
             // Check the inner components
-            cy.get('.row').should('be.visible');
-            cy.get('.title').should('be.visible');
+            cy.get('#card-section').should('be.visible');
+            cy.get('#title').should('be.visible');
 
             // Check for image or box or channel
             cy.get('.styled-image-container').then($el => {
@@ -60,10 +60,10 @@ describe('Verify component rendering for all screen sizes', () => {
             });
 
             // Ensure the card has consistent margins and height
-            cy.get('.q-card').should('have.css', 'margin-bottom', '8px');
-            cy.get('.q-card').should('have.css', 'margin-right', '8px');
-            cy.get('.q-card').should('have.css', 'margin-left', '8px');
-            cy.get('.q-card').should('have.css', 'height', '48px');
+            cy.get('#chat-card').should('have.css', 'margin-bottom', '8px');
+            cy.get('#chat-card').should('have.css', 'margin-right', '8px');
+            cy.get('#chat-card').should('have.css', 'margin-left', '8px');
+            cy.get('#chat-card').should('have.css', 'height', '48px');
         });
     });
 });
