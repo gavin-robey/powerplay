@@ -48,12 +48,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import { useChannelStore } from '../stores/channelStore';
+
+const store = useChannelStore();
+const route = useRoute();
+const chatId = route.params.chatId as string;
 
 interface Message {
   user: string;
   text: string;
   sent: boolean;
+}
+
+interface Channel {
+  channel_name: string;
+  channel_id: string;
+  channel_image: string | null;
+  missed_chats: number;
+  type: string;
 }
 
 const messages = ref<Message[]>([]);
